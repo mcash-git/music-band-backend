@@ -1,0 +1,59 @@
+{
+  "name": "adonis-mongo-boilerplate",
+  "version": "4.0.0",
+  "description": "A boilerplate Rest API build on Adonisjs FW with LucidMongo and swagger-jsdoc Edit",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test:local": "node ace test",
+    "test": "nyc node ace test",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "keywords": [
+    "adonisjs",
+    "adonis-app"
+  ],
+  "author": "",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@adonisjs/ace": "^5.0.0",
+    "@adonisjs/ally": "github:duyluonglc/adonis-ally#develop",
+    "@adonisjs/auth": "^3.0.5",
+    "@adonisjs/bodyparser": "^2.0.0",
+    "@adonisjs/cors": "^1.0.2",
+    "@adonisjs/fold": "^4.0.8",
+    "@adonisjs/framework": "^4.0.31",
+    "@adonisjs/ignitor": "^2.0.2",
+    "@adonisjs/mail": "^3.0.3",
+    "@adonisjs/session": "^1.0.19",
+    "@adonisjs/shield": "^1.0.6",
+    "@adonisjs/validator": "^5.0.1",
+    "@adonisjs/vow": "^1.0.13",
+    "@adonisjs/vow-browser": "^1.0.5",
+    "@adonisjs/websocket": "^1.0.9",
+    "apisauce": "^0.14.3",
+    "lucid-mongo": "^3.0.6",
+    "node-pushnotifications": "^1.0.20",
+    "require-all": "^2.2.0",
+    "swagger-jsdoc": "^1.9.7"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "nyc": "^11.4.1",
+    "standard": "^11.0.0",
+    "swagger-ui-dist": "^3.13.2"
+  },
+  "standard": {
+    "global": [
+      "use",
+      "make"
+    ],
+    "ignore": [
+      "/public"
+    ]
+  },
+  "autoload": {
+    "App": "./app"
+  }
+}

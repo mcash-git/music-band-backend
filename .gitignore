@@ -1,0 +1,8 @@
+node_modules
+tmp
+.env
+package-lock.json
+.nyc_output
+/.vscode
+public/uploads
+.env.testing

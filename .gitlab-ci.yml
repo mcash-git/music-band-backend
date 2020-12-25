@@ -1,0 +1,34 @@
+image: node:latest
+
+cache:
+  key: "$CI_BUILD_REF_NAME"
+  paths:
+  - node_modules/
+
+services:
+  - mongo:latest
+
+variables:
+  DB_HOST: mongo
+  DB_PORT: 27017
+  DB_USER: admin
+  DB_PASSWORD: ''
+  DB_DATABASE: dbtest
+
+before_script:
+  - node -v
+  - npm -v
+  - which node
+  - cp .env.example .env
+  # - cp .env.example .env.testing
+  - chmod 755 ./ace
+  - npm install --silent --no-optional > /dev/null
+  - npm -g install @adonisjs/cli nyc
+test:
+  stage: test
+  script:
+    # - adonis migration:run
+    - adonis test
+  artifacts:
+    paths:
+      - .nyc_output
